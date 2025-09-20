@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
-    <title>Chrome Web Recap</title>
+    <title>Number Game</title>
 </head>
 <body>
     <header>
-        <h1>Number guessing game</h1>
+        <h1 class="title">Number Game</h1>
     </header>
     <main>
-        <p>We have selected a random number between 1 and 100. 
+        <p>
+            We have selected a random number between 1 and 100. 
             See if you can guess it in 10 turns or fewer. 
             We'll tell you if your guess was too high or too low.
         </p>
-        <form class="form">
-            <label for="inputNumber">Enter a guess: </label>
-            <input type="number" name="inputNumber" min="1" max="100" required class="guessField">
-            <button class="guessSubmit">Submit guess</button>
+        <form class="guessForm">
+            <label for="inputNumber">Guess Number: </label>
+            <input type="number" name="inputNumber" required class="guessField" max="100" min="1">
+            <button class="guessSubmit">Submit</button>
         </form>
         <div class="resultParas">
             <p class="guesses"></p>
