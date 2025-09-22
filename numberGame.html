@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="/style/numberGame.css">
+    <script src="JS/numberGame.js" defer></script>
     <title>Number Game</title>
 </head>
 <body>
@@ -19,14 +19,18 @@
         </p>
         <form class="guessForm">
             <label for="inputNumber">Guess Number: </label>
-            <input type="number" name="inputNumber" required class="guessField" max="100" min="1">
+            <input class="guessField" type="number" name="inputNumber" required max="100" min="1">
             <button class="guessSubmit">Submit</button>
         </form>
         <div class="resultParas">
+            <p class="leftoverChance"></p>
             <p class="guesses"></p>
             <p class="lastResult"></p>
             <p class="lowOrHi"></p>
         </div>
     </main>
+    <footer>
+        <a class="goHome" href="home.html">Go home</a>
+    </footer>
 </body>
 </html>
