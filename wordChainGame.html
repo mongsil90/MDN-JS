@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="JS/wordChainGame.js" defer></script>
+    <link rel="stylesheet" href="style/wordChainGame.css">
     <title>Word Chain Game</title>
 </head>
 <body>
@@ -11,14 +12,19 @@
         <h1 class="title">공포의 쿵쿵따</h1>
     </header>
     <main>
-        <form>
-            <label for="suggestedWord">제시어: </label>
-            <input class="suggestedWord" name="suggestedWord" type="text" required>
+        <form class="startForm">
+            <label for="headCount">참가 인원을 입력하세요 : </label>
+            <input class="headCount" name="headCount" type="text" required>
             <button class="startButton">게임 시작!</button>
         </form>
-        <div class="resultCheck">
-            <p class="wordsRecording"></p>
-            <p class="checkMessage"></p>
+        <p class="userNumber"></p>
+        <form class="wordGameForm">
+            <input class="wordInput" type="text" required>
+            <button class="wordSubmit" type="submit">쿵쿵따</button>
+        </form>
+        <div>
+            <p class="lastWords"></p>
+            <p class="gameOver"></p>
         </div>
     </main>
     <footer>
