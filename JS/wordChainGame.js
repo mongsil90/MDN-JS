@@ -33,7 +33,7 @@ function resetGame() {
     resetButton.remove();
 }
 
-// 리셋 버튼 생성
+// 리셋 버튼 생성 함수
 function resetBtn() {
     resetButton = document.createElement("button");
     resetButton.textContent = "Reset Game 🚀";
@@ -42,7 +42,7 @@ function resetBtn() {
 }
 
 
-// testWord 함수
+// 단어 판별 함수
 function testWord() {
 
     if (pastWord.at(-1) !== newWord.at(0)) {
@@ -53,9 +53,8 @@ function testWord() {
     }
 }
 
-
-// 단어 게임 시작
-function checkWord(e) {
+// 단어 저장 함수
+function savedWord(e) {
     e.preventDefault();
 
     // 만약 전 단어가 비었으면 채우기
@@ -70,7 +69,6 @@ function checkWord(e) {
     lastWords.textContent += wordInput.value + " > ";
     wordInput.value = "";
     setUsercount();
-    
 }
 
 // 단어 입력 시 몇 번째 차례인지 알려주는 함수
@@ -92,11 +90,9 @@ function startGame(e) {
     startForm.style.display = "none";
     wordGameForm.classList.toggle("show");
     setUsercount();
-    wordSubmit.addEventListener("click", checkWord);
+    wordSubmit.addEventListener("click", savedWord);
     wordInput.focus();
 }
-
-
 
 
 // 이벤트 리스너: 게임 시작
