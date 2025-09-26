@@ -14,19 +14,19 @@
     <main>
         <form class="startForm">
             <label for="headCount">참가 인원을 입력하세요 : </label>
-            <input class="headCount" name="headCount" type="number" required>
+            <input class="headCount" name="headCount" type="number" required min="1">
             <button class="startButton" type="submit">게임 시작!</button>
         </form>
-        <h2 class="users"></h2>
-        <p class="userNumber"></p>
-        <form class="wordGameForm">
-            <input class="wordInput" type="text" required placeholder="3글자를 입력하세요.">
+
+        <form class="wordGameForm hidden">
+            <input class="wordInput" type="text" required maxlength="3" placeholder="3글자를 입력하세요.">
             <button class="wordSubmit" type="submit">쿵쿵따</button>
         </form>
-        <div>
-            <p class="lastWords"></p>
-            <p class="gameOver"></p>
-        </div>
+
+        <div class="users"></div>
+        <div class="userNumber"></div>
+        <div class="lastWords"></div>
+        <div class="gameOver"></div>
     </main>
     <footer>
         <a class="goHome" href="home.html">Go home</a>
