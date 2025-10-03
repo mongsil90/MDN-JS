@@ -34,7 +34,7 @@ function calculate(a, op, b) {
     const fn = OPS[op];
 
     if (!fn) return NaN;
-    return fn(a, b); // <-- 정확한 의미??
+    return fn(a, b); // <-- a, b는 객체 안의 함수로 전달할 매개 변수
 }
 
 
@@ -48,7 +48,7 @@ function handleCal(e) {
 
     if (!parsed) {
         showError("형식이 올바르지 않습니다.");
-        return; // <-- 리턴 이유?
+        return; // <-- 리턴 이유? 이후로 진행되는 것을 막기 위해서.
     }
 
     // 파싱한 데이터 계산하기
