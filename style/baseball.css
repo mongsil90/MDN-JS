@@ -1,0 +1,16 @@
+.goHome {
+    position: fixed;     /* 화면에 고정 */
+    bottom: 20px;        /* 브라우저 하단에서 20px 위 */
+    left: 50%;           /* 화면 가로 중앙 */
+    transform: translateX(-50%);
+    background: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+

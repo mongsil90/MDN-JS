@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/baseball.css">
+    <script src="JS/baseball.js" defer></script>
     <title>숫자 야구</title>
 </head>
 <body>
@@ -27,7 +29,17 @@
         </div>
     </header>
     <main>
-
+        <form class="startForm">
+            <button class="startBtn" type="submit">Play Ball!</button>
+        </form>
+        <form class="playForm hidden">
+            <input class="inputNumber" type="number" required maxlength="3" minlength="1">
+            <button class="submitNumber" type="submit">Pitch!</button>
+        </form>
+        <p class="result"></p>
     </main>
+    <footer>
+        <a class="goHome" href="home.html">Go home</a>
+    </footer>
 </body>
 </html>
