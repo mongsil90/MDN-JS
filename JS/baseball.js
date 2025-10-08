@@ -98,12 +98,6 @@ function toDigits3(input) {
 }
 
 
-// Ball 또는 Out 일 때
-function ballOrOut(strike, ball, out) {
-    
-}
-
-
 // ===== UI 핸들러 =====
 function clickPitch(e) {
     e.preventDefault();
@@ -128,6 +122,12 @@ function clickPitch(e) {
         submitNumber.disabled = true;
         resetBtn();
         return;
+    } else if (state.turn >= 9) {
+        resultEl.textContent = "패배! 다시 도전하세요!";
+        inputNumber.disabled = true;
+        submitNumber.disabled = true;
+        resetBtn();
+        return;
     } else {
         resultEl.textContent = out ? "OUT" : `${strike}S, ${ball}B`;
     }
@@ -135,10 +135,10 @@ function clickPitch(e) {
 
     // 결과 저장
     const div = document.createElement("div");
-    div.textContent += `${verified.join("")} → ${resultEl.textContent}`;
+    div.textContent += `${state.turn}회: ${verified.join("")} → ${resultEl.textContent}`;
     logEl.appendChild(div);
 
-    
+    state.turn += 1;
     inputNumber.value = "";
     inputNumber.focus();
 }
