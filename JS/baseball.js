@@ -1,4 +1,4 @@
-// 요소 가져오기
+// ==== 요소 가져오기 ====
 const startForm = document.querySelector(".startForm");
 const startBtn = document.querySelector(".startBtn");
 const playForm = document.querySelector(".playForm");
@@ -26,6 +26,8 @@ function hide(el) { if (el) el.classList.add("hidden") };
 // ==== 게임 리셋 ====
 // 리셋 버튼
 function resetBtn() {
+    inputNumber.disabled = true;
+    submitNumber.disabled = true;
     resetButton = document.createElement("button");
     resetButton.textContent = "Reset Game";
     document.body.append(resetButton);
@@ -117,17 +119,14 @@ function clickPitch(e) {
 
     // 결과 표시
     if (strike === 3) {
-        resultEl.textContent = `승리!🎉 3 스트라이크 입니다! (정답: ${state.secretNumbers.join("")})`;
-        inputNumber.disabled = true;
-        submitNumber.disabled = true;
+        resultEl.textContent = `3 Strike! 승리!🎉 (정답: ${state.secretNumbers.join("")})`;
         resetBtn();
         return;
     } else if (state.turn >= 9) {
-        resultEl.textContent = "패배! 다시 도전하세요!";
-        inputNumber.disabled = true;
-        submitNumber.disabled = true;
+        const gameOver = document.createElement("p");
+        gameOver.textContent = `패배! 다시 도전하세요! (정답: ${state.secretNumbers.join("")})`;
+        document.body.append(gameOver);
         resetBtn();
-        return;
     } else {
         resultEl.textContent = out ? "OUT" : `${strike}S, ${ball}B`;
     }
